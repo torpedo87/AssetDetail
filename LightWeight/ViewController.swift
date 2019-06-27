@@ -109,10 +109,8 @@ class ViewController: UIViewController {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillEqually
+        stack.distribution = .equalSpacing
         stack.spacing = 5
-        stack.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .horizontal)
-        stack.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .vertical)
         return stack
     }()
     
@@ -228,7 +226,6 @@ class ViewController: UIViewController {
             make.leading.equalTo(titleLabel)
             make.centerY.equalTo(downloadButton)
             make.top.equalTo(titleLabel.snp.bottom)
-            make.trailing.equalTo(downloadButton.snp.leading).offset(-5)
         }
         
         descriptionLabel.snp.makeConstraints { make in

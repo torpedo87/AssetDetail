@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		26ACC870B2CD6CDEBC1D4F20 /* Pods_LightWeight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71BBA0ACB4A5844C80CA3AED /* Pods_LightWeight.framework */; };
+		485D522422C4EDE900677063 /* AssetDetailViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D522322C4EDE900677063 /* AssetDetailViewRepresentable.swift */; };
 		DD2CDC4A22C337CE009CC184 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2CDC4922C337CE009CC184 /* AppDelegate.swift */; };
 		DD2CDC4C22C337CE009CC184 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2CDC4B22C337CE009CC184 /* ViewController.swift */; };
 		DD2CDC5122C337CF009CC184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2CDC5022C337CF009CC184 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		4565E78D1AFD4CADD0EA13E8 /* Pods-LightWeight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWeight.release.xcconfig"; path = "Target Support Files/Pods-LightWeight/Pods-LightWeight.release.xcconfig"; sourceTree = "<group>"; };
+		485D522322C4EDE900677063 /* AssetDetailViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewRepresentable.swift; sourceTree = "<group>"; };
 		71BBA0ACB4A5844C80CA3AED /* Pods_LightWeight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightWeight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9528B02D5613D756FB7F282B /* Pods-LightWeight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightWeight.debug.xcconfig"; path = "Target Support Files/Pods-LightWeight/Pods-LightWeight.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2CDC4622C337CE009CC184 /* LightWeight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightWeight.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +64,6 @@
 				9528B02D5613D756FB7F282B /* Pods-LightWeight.debug.xcconfig */,
 				4565E78D1AFD4CADD0EA13E8 /* Pods-LightWeight.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,6 +98,7 @@
 				DD2CDC6122C34EF6009CC184 /* ThumbnailCell.swift */,
 				DD2CDC6322C35574009CC184 /* Asset.swift */,
 				DD2CDC6722C35D10009CC184 /* UIImageView.swift */,
+				485D522322C4EDE900677063 /* AssetDetailViewRepresentable.swift */,
 			);
 			path = LightWeight;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 				DD2CDC6422C35574009CC184 /* Asset.swift in Sources */,
 				DD2CDC6222C34EF6009CC184 /* ThumbnailCell.swift in Sources */,
 				DD2CDC6822C35D10009CC184 /* UIImageView.swift in Sources */,
+				485D522422C4EDE900677063 /* AssetDetailViewRepresentable.swift in Sources */,
 				DD2CDC5E22C33861009CC184 /* AssetDetailViewModel.swift in Sources */,
 				DD2CDC4C22C337CE009CC184 /* ViewController.swift in Sources */,
 				DD2CDC4A22C337CE009CC184 /* AppDelegate.swift in Sources */,
@@ -290,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -345,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -361,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y59HNQR68T;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LightWeight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
