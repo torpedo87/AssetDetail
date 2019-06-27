@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
     
@@ -181,67 +182,76 @@ class ViewController: UIViewController {
         view.addSubview(descriptionLabel)
         
         let screenHight: CGFloat = UIScreen.main.bounds.height
-        NSLayoutConstraint.activate([
-            topView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            topView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            topView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            topView.heightAnchor.constraint(equalToConstant: 42),
-            
-            playerView.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 28),
-            playerView.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
-            playerView.bottomAnchor.constraint(equalTo: lineView.topAnchor, constant: -20),
-            playerView.widthAnchor.constraint(equalTo: playerView.heightAnchor, multiplier: 280/157),
-            
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 28),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -28),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -28),
-            collectionView.topAnchor.constraint(equalTo: lineView.bottomAnchor, constant: 20),
-            
-            lineView.leadingAnchor.constraint(equalTo: collectionView.leadingAnchor),
-            lineView.trailingAnchor.constraint(equalTo: collectionView.trailingAnchor),
-            lineView.heightAnchor.constraint(equalToConstant: 1),
-            lineView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(screenHight-42)*2/5),
-            
-            descriptionLayoutGuide.leadingAnchor.constraint(equalTo: playerView.trailingAnchor, constant: 20),
-            descriptionLayoutGuide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -28),
-            descriptionLayoutGuide.bottomAnchor.constraint(equalTo: lineView.topAnchor, constant: -20),
-            descriptionLayoutGuide.topAnchor.constraint(equalTo: topView.bottomAnchor, constant: 28),
-            
-            titleLabel.trailingAnchor.constraint(equalTo: descriptionLayoutGuide.trailingAnchor),
-            titleLabel.topAnchor.constraint(equalTo: descriptionLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: descriptionLayoutGuide.leadingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 35),
-            
-            downloadButton.trailingAnchor.constraint(equalTo: descriptionLayoutGuide.trailingAnchor),
-            downloadButton.widthAnchor.constraint(equalToConstant: 90),
-            downloadButton.heightAnchor.constraint(equalToConstant: 23),
-            downloadButton.centerYAnchor.constraint(equalTo: infoStackView.centerYAnchor),
-            
-            infoStackView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            infoStackView.centerYAnchor.constraint(equalTo: downloadButton.centerYAnchor),
-            infoStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            infoStackView.trailingAnchor.constraint(equalTo: downloadButton.leadingAnchor, constant: -5),
-            
-            descriptionLabel.trailingAnchor.constraint(equalTo: descriptionLayoutGuide.trailingAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: descriptionLayoutGuide.leadingAnchor),
-            descriptionLabel.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 10),
-            descriptionLabel.bottomAnchor.constraint(equalTo: descriptionLayoutGuide.bottomAnchor),
-            
-            backButton.topAnchor.constraint(equalTo: topView.topAnchor),
-            backButton.bottomAnchor.constraint(equalTo: topView.bottomAnchor),
-            backButton.leadingAnchor.constraint(equalTo: topView.leadingAnchor),
-            backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor),
-            
-            topLabel.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 8),
-            topLabel.widthAnchor.constraint(equalToConstant: 200),
-            topLabel.topAnchor.constraint(equalTo: topView.topAnchor),
-            topLabel.bottomAnchor.constraint(equalTo: topView.bottomAnchor),
-            
-            userImgView.widthAnchor.constraint(equalTo: userImgView.heightAnchor),
-            userImgView.trailingAnchor.constraint(equalTo: topView.trailingAnchor, constant: -4),
-            userImgView.bottomAnchor.constraint(equalTo: topView.bottomAnchor, constant: -4),
-            userImgView.topAnchor.constraint(equalTo: topView.topAnchor, constant: 4),
-        ])
+        topView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(42)
+        }
+        
+        playerView.snp.makeConstraints { make in
+            make.top.equalTo(topView.snp.bottom).offset(28)
+            make.leading.equalTo(collectionView)
+            make.bottom.equalTo(lineView.snp.top).offset(-20)
+        }
+        
+        collectionView.snp.makeConstraints { make in
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(28)
+            make.trailing.bottom.equalTo(view.safeAreaLayoutGuide).offset(-28)
+            make.top.equalTo(lineView.snp.bottom).offset(20)
+        }
+        
+        lineView.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(collectionView)
+            make.height.equalTo(1)
+            make.centerY.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-(screenHight-42)*2/5)
+        }
+        
+        descriptionLayoutGuide.snp.makeConstraints { make in
+            make.leading.equalTo(playerView.snp.trailing).offset(20)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-28)
+            make.bottom.equalTo(lineView.snp.top).offset(-20)
+            make.top.equalTo(topView.snp.bottom).offset(28)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.trailing.top.leading.equalTo(descriptionLayoutGuide)
+            make.height.equalTo(35)
+        }
+        
+        downloadButton.snp.makeConstraints { make in
+            make.trailing.equalTo(descriptionLayoutGuide)
+            make.width.equalTo(90)
+            make.height.equalTo(23)
+            make.centerY.equalTo(infoStackView)
+        }
+        
+        infoStackView.snp.makeConstraints { make in
+            make.leading.equalTo(titleLabel)
+            make.centerY.equalTo(downloadButton)
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.trailing.equalTo(downloadButton.snp.leading).offset(-5)
+        }
+        
+        descriptionLabel.snp.makeConstraints { make in
+            make.trailing.leading.bottom.equalTo(descriptionLayoutGuide)
+            make.top.equalTo(infoStackView.snp.bottom).offset(10)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.top.bottom.leading.equalTo(topView)
+            make.width.equalTo(backButton.snp.height)
+        }
+        
+        topLabel.snp.makeConstraints { make in
+            make.top.bottom.equalTo(topView)
+            make.width.equalTo(200)
+            make.leading.equalTo(backButton.snp.trailing).offset(8)
+        }
+        
+        userImgView.snp.makeConstraints { make in
+            make.width.equalTo(userImgView.snp.height)
+            make.trailing.bottom.equalTo(topView).offset(-4)
+            make.top.equalTo(topView).offset(4)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -250,6 +260,10 @@ class ViewController: UIViewController {
         let height: CGFloat = collectionView.bounds.size.height
         customLayout.itemSize = CGSize(width: height*ratio,
                                        height: height)
+        
+        playerView.snp.makeConstraints { make in
+            make.width.equalTo(playerView.frame.height * 280 / 157)
+        }
     }
 }
 
