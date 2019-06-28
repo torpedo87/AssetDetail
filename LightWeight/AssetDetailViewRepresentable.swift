@@ -35,15 +35,15 @@
 //    static var previews: some View {
 //        Group {
 //            AssetDetailViewRepresentable()
-//                .previewDevice("iPhone SE")
+//                .previewLayout(.fixed(width: 1136, height: 640))
 //                .previewDisplayName("iPhone SE")
 //
 //            AssetDetailViewRepresentable()
-//                .previewDevice("iPhone XS Max")
+//                .previewLayout(.fixed(width: 2688, height: 1242))
 //                .previewDisplayName("iPhone XS Max")
 //
 //            AssetDetailViewRepresentable()
-//                .previewDevice("iPad Pro (9.7-inch)")
+//                .previewLayout(.fixed(width: 2048, height: 1536))
 //                .previewDisplayName("iPad Pro (9.7-inch)")
 //        }
 //
