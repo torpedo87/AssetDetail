@@ -273,8 +273,7 @@ extension ViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThumbnailCell.reuseIdentifier,
                                                          for: indexPath) as? ThumbnailCell {
-            let urlString = viewModel.thumbNailUrlstrings[indexPath.item]
-            cell.configure(screenshotUrlString: urlString)
+            cell.configure(viewModel: viewModel, index: indexPath.item)
             return cell
         }
         return UICollectionViewCell()

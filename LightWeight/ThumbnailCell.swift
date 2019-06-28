@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ThumbnailCell: UICollectionViewCell {
     static let reuseIdentifier = "ThumbnailCell"
@@ -20,13 +21,14 @@ class ThumbnailCell: UICollectionViewCell {
         return imgView
     }()
     
-    func configure(screenshotUrlString: String) {
+    func configure(viewModel: AssetDetailRepresentable, index: Int) {
+        let screenshotUrlString = viewModel.thumbNailUrlstrings[index]
         addSubview(imgView)
         imgView.loadImageWithUrlString(urlString: screenshotUrlString)
-        imgView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        imgView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        imgView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        imgView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        imgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     override func prepareForReuse() {
