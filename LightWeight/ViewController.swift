@@ -11,7 +11,7 @@ import SnapKit
 
 class ViewController: UIViewController {
     
-    var viewModel: AssetDetailViewModel
+    var viewModel: AssetDetailRepresentable
     private let descriptionLayoutGuide = UILayoutGuide()
     private lazy var topView: UIView = {
         let view = UIView()
@@ -147,11 +147,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure(viewModel)
+        configureWithViewModel()
         setupUI()
     }
     
-    func configure(_ viewModel: AssetDetailViewModel) {
+    func configureWithViewModel() {
         topLabel.text = viewModel.categoryText
         sizeLabel.text = viewModel.sizeText
         titleLabel.text = viewModel.titleText
@@ -271,7 +271,8 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThumbnailCell.reuseIdentifier, for: indexPath) as? ThumbnailCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThumbnailCell.reuseIdentifier,
+                                                         for: indexPath) as? ThumbnailCell {
             let urlString = viewModel.thumbNailUrlstrings[indexPath.item]
             cell.configure(screenshotUrlString: urlString)
             return cell

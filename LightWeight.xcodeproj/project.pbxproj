@@ -18,6 +18,7 @@
 		DD2CDC6222C34EF6009CC184 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2CDC6122C34EF6009CC184 /* ThumbnailCell.swift */; };
 		DD2CDC6422C35574009CC184 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2CDC6322C35574009CC184 /* Asset.swift */; };
 		DD2CDC6822C35D10009CC184 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2CDC6722C35D10009CC184 /* UIImageView.swift */; };
+		DD2CDC6A22C592EE009CC184 /* AssetDetailRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2CDC6922C592EE009CC184 /* AssetDetailRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		DD2CDC6122C34EF6009CC184 /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		DD2CDC6322C35574009CC184 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		DD2CDC6722C35D10009CC184 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		DD2CDC6922C592EE009CC184 /* AssetDetailRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				DD2CDC6322C35574009CC184 /* Asset.swift */,
 				DD2CDC6722C35D10009CC184 /* UIImageView.swift */,
 				485D522322C4EDE900677063 /* AssetDetailViewRepresentable.swift */,
+				DD2CDC6922C592EE009CC184 /* AssetDetailRepresentable.swift */,
 			);
 			path = LightWeight;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				DD2CDC6422C35574009CC184 /* Asset.swift in Sources */,
 				DD2CDC6222C34EF6009CC184 /* ThumbnailCell.swift in Sources */,
 				DD2CDC6822C35D10009CC184 /* UIImageView.swift in Sources */,
+				DD2CDC6A22C592EE009CC184 /* AssetDetailRepresentable.swift in Sources */,
 				485D522422C4EDE900677063 /* AssetDetailViewRepresentable.swift in Sources */,
 				DD2CDC5E22C33861009CC184 /* AssetDetailViewModel.swift in Sources */,
 				DD2CDC4C22C337CE009CC184 /* ViewController.swift in Sources */,
@@ -364,8 +368,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y59HNQR68T;
 				INFOPLIST_FILE = LightWeight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,6 +390,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y59HNQR68T;
 				INFOPLIST_FILE = LightWeight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

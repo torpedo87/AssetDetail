@@ -8,16 +8,22 @@
 
 import Foundation
 
-struct AssetDetailViewModel {
+struct AssetDetailViewModel: AssetDetailRepresentable {
     
     let asset: Asset
-    let descriptionText: String
-    let thumbNailUrlstrings: [String]
-    let previewUrlstring: String
-    let sizeText: String
-    let titleText: String
-    let categoryText: String
-    let priceTypeText: String
+    
+    var sizeText: String {
+        return AssetDetailViewModel.byteCountFormatter.string(fromByteCount: asset.assetSize)
+    }
+    var titleText: String {
+        return asset.assetTitle
+    }
+    var categoryText: String {
+        return asset.assetCategoryType.rawValue
+    }
+    var priceTypeText: String {
+        return asset.assetPriceType.rawValue
+    }
     
     static let byteCountFormatter: ByteCountFormatter = {
         let formatter = ByteCountFormatter()
@@ -27,14 +33,19 @@ struct AssetDetailViewModel {
         return formatter
     }()
     
+    var descriptionText: String {
+        return asset.assetDescription
+    }
+    
+    var thumbNailUrlstrings: [String] {
+        return asset.assetThumbnailUrlstrings
+    }
+    
+    var previewUrlstring: String {
+        return asset.assetPreviewUrlstring
+    }
+    
     init(asset: Asset) {
         self.asset = asset
-        self.previewUrlstring = asset.assetPreviewUrlstring
-        descriptionText = asset.assetDescription
-        thumbNailUrlstrings = asset.assetThumbnailUrlstrings
-        sizeText = AssetDetailViewModel.byteCountFormatter.string(fromByteCount: asset.assetSize)
-        titleText = asset.assetTitle
-        categoryText = asset.assetCategoryType.rawValue
-        priceTypeText = asset.assetPriceType.rawValue
     }
 }
